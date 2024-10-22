@@ -11,6 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="버튼을 눌러 부분화면을 추가하세여" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="나가기"
+        android:id="@+id/getout"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

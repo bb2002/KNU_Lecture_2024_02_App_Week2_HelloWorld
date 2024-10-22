@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void merong(View view) {
-    Toast.makeText(getApplicationContext(), "메롱", Toast.LENGTH_SHORT).show();
+    Intent intent = new Intent(this, AddActivityActivity.class);
+    intent.putExtra("message", "Hello world");
+    startActivityForResult(intent, 0x1000);
   }
 
   public void gotoNaver(View view) {
@@ -37,5 +39,16 @@ public class MainActivity extends AppCompatActivity {
   public void getTel(View view) {
     Intent telInt = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:010-4917-4155"));
     startActivity(telInt);
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    switch (requestCode) {
+      case 0x1000:
+        String msg = data.getStringExtra("message");
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+    }
   }
 }
