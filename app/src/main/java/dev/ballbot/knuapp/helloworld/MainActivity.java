@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import dev.ballbot.knuapp.helloworld.serializer.MyParcelable;
+
 public class MainActivity extends AppCompatActivity {
 
   @Override
@@ -26,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void merong(View view) {
-    Intent intent = new Intent(this, AddActivityActivity.class);
-    intent.putExtra("message", "Hello world");
-    startActivityForResult(intent, 0x1000);
+    Intent intent = new Intent(this, ParcelableMenuActivity.class);
+    MyParcelable data = new MyParcelable(2147483646, "Welcome to the aperture");
+    intent.putExtra("MyData", data);
+    startActivityForResult(intent, 0x2000);
   }
 
   public void gotoNaver(View view) {
