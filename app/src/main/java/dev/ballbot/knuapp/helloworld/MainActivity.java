@@ -3,6 +3,7 @@ package dev.ballbot.knuapp.helloworld;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,10 +22,29 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     EdgeToEdge.enable(this);
     setContentView(R.layout.activity_main);
+    Log.d("KNUAPP", "MainActivity.onCreate()");
 
     // findViewById(R.id.button).setOnClickListener(v -> {
     //   Toast.makeText(getApplicationContext(), "메롱", Toast.LENGTH_SHORT).show();
     // });
+  }
+
+  @Override
+  protected void onStart() {
+    super.onStart();
+    Log.d("KNUAPP", "MainActivity.onStart()");
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    Log.d("KNUAPP", "MainActivity.onResume()");
+  }
+
+  @Override
+  protected void onStop() {
+    super.onStop();
+    Log.d("KNUAPP", "MainActivity.onStop()");
   }
 
   public void merong(View view) {
@@ -54,4 +74,6 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
   }
+
+
 }
