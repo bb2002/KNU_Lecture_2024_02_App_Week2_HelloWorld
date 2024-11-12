@@ -9,7 +9,6 @@ import dev.ballbot.knuapp.helloworld.fragments.ViewFragment;
 
 public class ImageViewActivity extends AppCompatActivity implements ListFragment.ImageSelectionCallback {
   private ViewFragment viewerFragment = null;
-  private ListFragment listFragment = null;
   private int[] images = {
       R.drawable.neon,
       R.drawable.clove,
@@ -23,10 +22,6 @@ public class ImageViewActivity extends AppCompatActivity implements ListFragment
 
     FragmentManager fmgmt = getSupportFragmentManager();
     this.viewerFragment = (ViewFragment) fmgmt.findFragmentById(R.id.viewer_fragment);
-    this.listFragment = (ListFragment) fmgmt.findFragmentById(R.id.list_fragment);
-    if (this.listFragment != null) {
-      this.listFragment.callback = this;
-    }
   }
 
   @Override

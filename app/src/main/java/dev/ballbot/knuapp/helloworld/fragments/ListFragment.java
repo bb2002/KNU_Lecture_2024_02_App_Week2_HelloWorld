@@ -1,7 +1,9 @@
 package dev.ballbot.knuapp.helloworld.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -58,6 +60,14 @@ public class ListFragment extends Fragment implements View.OnClickListener {
 
     if (v.getId() == R.id.select_three_image) {
       this.callback.onImageSelected(2);
+    }
+  }
+
+  @Override
+  public void onAttach(@NonNull Context context) {
+    super.onAttach(context);
+    if (context instanceof ImageSelectionCallback) {
+      callback = (ImageSelectionCallback) context;
     }
   }
 }
