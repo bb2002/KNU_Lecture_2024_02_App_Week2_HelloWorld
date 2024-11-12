@@ -13,13 +13,19 @@
         android:theme="@style/Theme.HelloWorld"
         tools:targetApi="31">
         <activity
-            android:name=".FragmentTestActivity"
-            android:exported="true">
+            android:name=".ImageViewActivity"
+            android:exported="true"
+            android:theme="@style/Theme.HelloWorld">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".FragmentTestActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".SavedActivity"
@@ -44,7 +50,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
